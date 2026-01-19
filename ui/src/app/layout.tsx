@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Header } from "@/components/shared/header/header";
 import { MarketingHeader } from "@/components/shared/marketing-header/marketing-header";
-import { DentalProvider } from "@/components/context/dental-context/dental-context";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Thing - Your Health Data, Owned by You",
-  description: "Track, visualize, and understand your health data. Private by design. For patients and healthcare providers.",
+  title: "Biophile - Your Health Data, Owned by You",
+  description: "Track, visualize, and understand your health data. Private by design.",
 };
 
 export default function RootLayout({
@@ -32,19 +30,16 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
-          content="Thing - Your health data, owned by you. Private health tracking for patients, automation tools for providers."
+          content="Biophile - Your health data, owned by you. Private health tracking."
         />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <DentalProvider>
-          <div className="h-dvh flex flex-col">
-            <MarketingHeader />
-            <Header />
-            <main className="flex-1 overflow-auto">{children}</main>
-          </div>
-        </DentalProvider>
+        <div className="h-dvh flex flex-col">
+          <MarketingHeader />
+          <main className="flex-1 overflow-auto">{children}</main>
+        </div>
       </body>
     </html>
   );

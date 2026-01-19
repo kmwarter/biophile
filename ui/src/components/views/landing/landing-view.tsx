@@ -4,7 +4,6 @@ import Link from "next/link";
 import {
   ShieldCheckIcon,
   ChartBarIcon,
-  UserGroupIcon,
   ArrowRightIcon,
   LockClosedIcon,
   HeartIcon,
@@ -40,10 +39,10 @@ export function LandingView() {
                   <ArrowRightIcon className="w-5 h-5" />
                 </Link>
                 <Link
-                  href="/providers"
+                  href="/health"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-full text-lg font-medium hover:border-gray-400 hover:bg-white transition-colors"
                 >
-                  For Providers
+                  View Demo
                 </Link>
               </div>
             </div>
@@ -115,25 +114,25 @@ export function LandingView() {
         </div>
       </section>
 
-      {/* For Patients vs For Providers */}
+      {/* Features Section */}
       <section className="px-6 py-20 bg-brand-cream-100 min-h-[600px] flex items-center">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* For Patients */}
+          <div className="max-w-3xl mx-auto">
             <div className="bg-white rounded-3xl p-8 md:p-10 shadow-sm">
               <div className="w-12 h-12 bg-brand-teal-100 rounded-xl flex items-center justify-center mb-6">
-                <UserGroupIcon className="w-6 h-6 text-brand-teal-600" />
+                <ChartBarIcon className="w-6 h-6 text-brand-teal-600" />
               </div>
-              <h3 className="text-2xl font-medium text-gray-900 mb-4">For Patients</h3>
+              <h3 className="text-2xl font-medium text-gray-900 mb-4">Take Control of Your Health</h3>
               <p className="text-gray-600 mb-6">
-                Take control of your health journey. Track labs, understand your data, and find providers who accept your insurance.
+                Track your biomarkers over time, understand your data, and make informed decisions about your health journey.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
                   "Visualize 100+ biomarkers over time",
                   "AI-powered insights (bring your own key)",
-                  "Find providers who accept your insurance",
+                  "Track biological age and trends",
                   "Share records with one-time secure links",
+                  "Connect with Quest, LabCorp, and more",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <CheckCircleIcon className="w-5 h-5 text-brand-teal-500 flex-shrink-0 mt-0.5" />
@@ -146,37 +145,6 @@ export function LandingView() {
                 className="inline-flex items-center gap-2 text-brand-teal-600 font-medium hover:text-brand-teal-700"
               >
                 Start tracking your health
-                <ArrowRightIcon className="w-4 h-4" />
-              </Link>
-            </div>
-
-            {/* For Providers */}
-            <div className="bg-white rounded-3xl p-8 md:p-10 shadow-sm">
-              <div className="w-12 h-12 bg-brand-orange-100 rounded-xl flex items-center justify-center mb-6">
-                <ChartBarIcon className="w-6 h-6 text-brand-orange-500" />
-              </div>
-              <h3 className="text-2xl font-medium text-gray-900 mb-4">For Providers</h3>
-              <p className="text-gray-600 mb-6">
-                Automate your back office. Reduce no-shows, auto-post EOBs, and connect with patients already tracking their health.
-              </p>
-              <ul className="space-y-3 mb-8">
-                {[
-                  "AI receptionist for missed calls",
-                  "Automatic EOB parsing & posting",
-                  "Patient scheduling integration",
-                  "Works with any PMS system",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckCircleIcon className="w-5 h-5 text-brand-orange-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/providers"
-                className="inline-flex items-center gap-2 text-brand-orange-500 font-medium hover:text-brand-orange-600"
-              >
-                Learn about provider tools
                 <ArrowRightIcon className="w-4 h-4" />
               </Link>
             </div>
@@ -243,7 +211,7 @@ export function LandingView() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-gray-500 text-sm">
-              &copy; {new Date().getFullYear()} Thing Health. Your health, your data.
+              &copy; {new Date().getFullYear()} Biophile. Your health, your data.
             </div>
             <div className="flex gap-8 text-sm">
               <Link href="/blog" className="text-gray-600 hover:text-gray-900">
@@ -251,9 +219,6 @@ export function LandingView() {
               </Link>
               <Link href="/privacy" className="text-gray-600 hover:text-gray-900">
                 Privacy
-              </Link>
-              <Link href="/providers" className="text-gray-600 hover:text-gray-900">
-                Providers
               </Link>
             </div>
           </div>

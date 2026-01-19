@@ -30,9 +30,8 @@ export function MarketingHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // Don't show marketing header on app routes
-  const appRoutes = ["/dashboard", "/calls", "/billing", "/settings"];
-  if (appRoutes.some((route) => pathname.startsWith(route))) {
+  // Don't show marketing header on health app routes (they have their own sidebar)
+  if (pathname.startsWith("/health")) {
     return null;
   }
 
@@ -42,7 +41,7 @@ export function MarketingHeader() {
         <Link href="/" className="flex items-center gap-3">
           <LogoMark className="w-8 h-8 text-brand-teal-600" />
           <span className="text-xl font-medium text-gray-900">
-            Thing<span className="text-brand-teal-600">.</span>
+            Biophile<span className="text-brand-teal-600">.</span>
           </span>
         </Link>
 
@@ -60,12 +59,6 @@ export function MarketingHeader() {
               {item.label}
             </Link>
           ))}
-          <Link
-            href="/providers/login"
-            className="text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            Providers
-          </Link>
           <Link
             href="/login"
             className="text-gray-600 hover:text-gray-900 transition-colors"
@@ -108,13 +101,6 @@ export function MarketingHeader() {
                 {item.label}
               </Link>
             ))}
-            <Link
-              href="/providers/login"
-              onClick={() => setMenuOpen(false)}
-              className="text-gray-700 hover:text-gray-900 py-2"
-            >
-              Providers
-            </Link>
             <Link
               href="/login"
               onClick={() => setMenuOpen(false)}
